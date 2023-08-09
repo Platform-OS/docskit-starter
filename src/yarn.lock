@@ -2001,10 +2001,10 @@
     fs-extra "^7.0.0"
     gatsby-plugin-content-hash "^0.0.6"
 
-"@platformos/gatsby-theme-platformos-docskit@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@platformos/gatsby-theme-platformos-docskit/-/gatsby-theme-platformos-docskit-1.1.6.tgz#793482fc7c081f57d4a2861a49e652e66d76c4f6"
-  integrity sha512-SFStOO7fDv+wUU0lnEdozAGPtF4en/gsFDiQ2+atTb86zqNPDUasNVujyqr1ypBI8WdSHxsB+6LLaeZpKna/tA==
+"@platformos/gatsby-theme-platformos-docskit@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@platformos/gatsby-theme-platformos-docskit/-/gatsby-theme-platformos-docskit-1.1.7.tgz#f29daa9042a1ffaa9416bd180e1241fc50c7745f"
+  integrity sha512-egzA6qUCqbXEHbCPUIJhwyYmTRaKUDoSfK0n0SnNvzexo9G1Itz1VLZodATI5Lzv48EErldLRt2/G0Z9ESt+Ow==
   dependencies:
     "@fontsource-variable/mulish" "^5.0.1"
     "@mdx-js/react" "^2.3.0"
@@ -4402,11 +4402,6 @@ dotenv-expand@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
   integrity sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==
-
-dotenv@^16.3.1:
-  version "16.3.1"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.3.1.tgz#369034de7d7e5b120972693352a3bf112172cc3e"
-  integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
 
 dotenv@^7.0.0:
   version "7.0.0"

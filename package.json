@@ -14,8 +14,10 @@
   },
   "homepage": "https://github.com/Platform-OS/docskit-starter#readme",
   "scripts": {
-    "eslint:mdx": "eslint ./src/docs ./src/partials",
-    "eslint:mdx:ci": "eslint ./src/docs ./src/partials --format json --output-file reports/eslint-mdx.json"
+    "prebuild": "rm -rf app/",
+    "build": "npm run build --prefix src",
+    "eslint:mdx": "eslint ./src/docs ./src/partials --no-error-on-unmatched-pattern",
+    "eslint:mdx:ci": "eslint ./src/docs ./src/partials --no-error-on-unmatched-pattern --format json --output-file reports/eslint-mdx.json"
   },
   "devDependencies": {
     "eslint": "^8.45.0",
