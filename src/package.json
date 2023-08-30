@@ -12,7 +12,7 @@
   "dependencies": {
     "@fontsource/montserrat": "^5.0.2",
     "@platformos/gatsby-plugin-posify": "^0.0.2",
-    "@platformos/gatsby-theme-platformos-docskit": "^1.1.7",
+    "@platformos/gatsby-theme-platformos-docskit": "^1.2.0",
     "gatsby": "^5.9.1",
     "gatsby-plugin-manifest": "^5.9.0",
     "gatsby-remark-external-links": "^0.0.4",
