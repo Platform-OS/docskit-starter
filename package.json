@@ -16,8 +16,8 @@
   "scripts": {
     "prebuild": "rm -rf app/",
     "build": "npm run build --prefix src",
-    "eslint:mdx": "eslint ./src/docs ./src/partials --no-error-on-unmatched-pattern",
-    "eslint:mdx:ci": "eslint ./src/docs ./src/partials --no-error-on-unmatched-pattern --format json --output-file reports/eslint-mdx.json"
+    "eslint:mdx": "eslint ./src/docs ./src/partials --no-error-on-unmatched-pattern --exit-on-fatal-error",
+    "eslint:mdx:ci": "eslint ./src/docs ./src/partials --no-error-on-unmatched-pattern --exit-on-fatal-error --output-file reports/eslint-mdx.txt"
   },
   "devDependencies": {
     "eslint": "^8.45.0",

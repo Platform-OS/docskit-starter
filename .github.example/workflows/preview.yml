@@ -14,8 +14,6 @@ jobs:
     timeout-minutes: 10
     env:
       MPKIT_URL: ${{ secrets.MPKIT_PREVIEW_URL }}
-      MPKIT_EMAIL: ${{ secrets.MPKIT_EMAIL }}
-      MPKIT_TOKEN: ${{ secrets.MPKIT_TOKEN }}
       ASSET_PREFIX: ${{ vars.PREVIEW_ASSET_PREFIX }}
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
@@ -29,14 +27,14 @@ jobs:
           registry-url: https://registry.yarnpkg.com
 
       - name: Install and run eslint
+        id: eslint-ci
         run: yarn install && yarn run eslint:mdx:ci
-        continue-on-error: true
 
-      - name: Annotate Code Linting Results
-        uses: ataylorme/eslint-annotate-action@v2
+      - name: PR comment with eslint error
+        if: failure() && steps.eslint-ci.outcome != 'success'
+        uses: thollander/actions-comment-pull-request@v2
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          report-json: "./reports/eslint-mdx.json"
+          filePath: reports/eslint-mdx.txt
 
       - name: Install Docskit Dependencies
         run: yarn install --cwd src
@@ -48,10 +46,12 @@ jobs:
 
       - name: Deploy
         shell: sh
+        env:
+          MPKIT_TOKEN: ${{ secrets.MPKIT_TOKEN }}
+          MPKIT_EMAIL: ${{ secrets.MPKIT_EMAIL }}
         run: |
           set -e
           npm -g install @platformos/pos-cli
-          pos-cli data clean --auto-confirm
           pos-cli deploy
 
       - name: Leave a comment after preview deployment
